@@ -2,17 +2,15 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 analyzer = SentimentIntensityAnalyzer()
 
-email = input("Enter Email: ")
+def get_sentiment(email):
 
-score = analyzer.polarity_scores(email)
+    score = analyzer.polarity_scores(email)
 
-print(score)
+    if score["compound"] >= 0.05:
+        return "Positive"
 
-if score['compound'] >= 0.05:
-    print("Positive")
+    elif score["compound"] <= -0.05:
+        return "Negative"
 
-elif score['compound'] <= -0.05:
-    print("Negative")
-
-else:
-    print("Neutral")
+    else:
+        return "Neutral"
