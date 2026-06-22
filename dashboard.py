@@ -29,16 +29,20 @@ if st.button("Analyze"):
     st.write("Sentiment:", sentiment)
     st.write("Priority:", priority)
 
-    st.subheader("Email History")
-
-    df = pd.read_csv("emails.csv")
-
-    st.dataframe(df)
-    
 st.subheader("Email History")
 
 try:
-    df = pd.read_csv("emails.csv")
+    df = pd.read_csv("data/email.csv")
+
     st.dataframe(df)
-except:
-    st.info("No emails analyzed yet.")    
+
+    st.subheader("Category Distribution")
+
+    category_counts = df["category"].value_counts()
+
+    st.write(category_counts)
+
+    st.bar_chart(category_counts)
+
+except Exception as e:
+    st.error(f"Error: {e}")

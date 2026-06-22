@@ -3,9 +3,9 @@ import os
 
 def save_email(email, category, sentiment, priority):
 
-    file_exists = os.path.isfile("emails.csv")
+    file_exists = os.path.isfile("data/email.csv")
 
-    with open("emails.csv", "a", newline="", encoding="utf-8") as file:
+    with open("data/email.csv", "a", newline="", encoding="utf-8") as file:
 
         writer = csv.writer(file)
 
