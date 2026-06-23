@@ -25,11 +25,14 @@ if st.button("Analyze"):
     st.success("Analysis Complete")
 
     st.write("### Results")
-    st.write("Category:", category)
-    st.write("Sentiment:", sentiment)
-    st.write("Priority:", priority)
 
-st.subheader("Email History")
+    col1, col2, col3 = st.columns(3)
+
+    col1.metric("Category", category)
+    col2.metric("Sentiment", sentiment)
+    col3.metric("Priority", priority)
+
+    st.subheader("Email History")
 
 try:
     df = pd.read_csv("data/email.csv")
@@ -37,12 +40,13 @@ try:
     st.dataframe(df)
 
     st.subheader("Category Distribution")
-
     category_counts = df["category"].value_counts()
-
     st.write(category_counts)
-
     st.bar_chart(category_counts)
+
+    st.subheader("Priority Distribution")
+    priority_counts = df["priority"].value_counts()
+    st.bar_chart(priority_counts)
 
 except Exception as e:
     st.error(f"Error: {e}")
