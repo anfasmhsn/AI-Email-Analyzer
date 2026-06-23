@@ -32,11 +32,38 @@ if st.button("Analyze"):
     col2.metric("Sentiment", sentiment)
     col3.metric("Priority", priority)
 
+    summary = f"""
+    This email was classified as {category}.
+    The detected sentiment is {sentiment}.
+    Priority level is {priority}.
+    """
+
+    st.subheader("AI Summary")
+    st.info(summary)
+
     st.subheader("Email History")
 
 try:
     df = pd.read_csv("data/email.csv")
+    search = st.text_input("🔍 Search Emails")
 
+    if search:
+        df = df[
+            df["email"].str.contains(
+                search,
+                case=False,
+                na=False
+            )
+        ]
+    selected_category = st.selectbox(
+        "Filter Category",
+        ["All"] + list(df["category"].unique())
+    )
+
+    if selected_category != "All":
+        df = df[
+            df["category"] == selected_category
+    ]    
     st.dataframe(df)
 
     st.subheader("Category Distribution")
@@ -48,5 +75,13 @@ try:
     priority_counts = df["priority"].value_counts()
     st.bar_chart(priority_counts)
 
+    csv = df.to_csv(index=False)
+
+    st.download_button(
+        label="📥 Download Report",
+        data=csv,
+        file_name="email_report.csv",
+        mime="text/csv"
+    )
 except Exception as e:
     st.error(f"Error: {e}")
