@@ -1,0 +1,55 @@
+email,category
+My salary has not been credited,Payroll Issue
+Salary payment is delayed,Payroll Issue
+Payment has not arrived yet,Payroll Issue
+Payslip is missing,Payroll Issue
+My reimbursement is pending,Payroll Issue
+I have not received my bonus,Payroll Issue
+
+I would like to resign from my position,Resignation
+Please accept my resignation,Resignation
+I am submitting my resignation letter,Resignation
+I want to leave the company,Resignation
+This is my final working week,Resignation
+
+I need leave tomorrow,Leave Request
+Can I take leave next week?,Leave Request
+Requesting sick leave for two days,Leave Request
+I am applying for annual leave,Leave Request
+Need emergency leave today,Leave Request
+
+Interview scheduled for tomorrow,Recruitment
+Interview has been rescheduled,Recruitment
+Candidate confirmed interview,Recruitment
+Please attend the technical interview,Recruitment
+HR interview completed successfully,Recruitment
+
+I have a complaint against my manager,Complaint
+Workplace harassment complaint,Complaint
+Reporting inappropriate behaviour,Complaint
+Complaint regarding office facilities,Complaint
+I want to report an issue with my team,Complaint
+
+Project deadline is tomorrow,Project Update
+Project status has been updated,Project Update
+Weekly project report attached,Project Update
+Task completed successfully,Project Update
+Sprint review meeting scheduled,Project Update
+
+Meeting scheduled at 3 PM,Meeting
+Please attend today's meeting,Meeting
+Client meeting invitation,Meeting
+Board meeting agenda attached,Meeting
+Team meeting has been postponed,Meeting
+
+Training session starts tomorrow,Training
+Python training scheduled,Training
+Mandatory cybersecurity training,Training
+AI workshop registration confirmed,Training
+Employee onboarding training,Training
+
+Congratulations on your promotion,Promotion
+Promotion announcement,Promotion
+You have been promoted,Promotion
+Promotion effective next month,Promotion
+Promotion discussion scheduled,Promotion

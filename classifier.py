@@ -1,20 +1,14 @@
+import joblib
+
+# Load the trained model
+model = joblib.load("models/model.pkl")
+vectorizer = joblib.load("models/vectorizer.pkl")
+
+
 def classify_email(email):
-    email = email.lower()
 
-    if "complaint" in email:
-        return "Complaint"
+    email_vector = vectorizer.transform([email])
 
-    elif "leave" in email:
-        return "Leave Request"
+    prediction = model.predict(email_vector)
 
-    elif "resign" in email:
-        return "Resignation"
-
-    elif "salary" in email:
-        return "Payroll Issue"
-
-    elif "interview" in email:
-        return "Recruitment"
-
-    else:
-        return "General Inquiry"
+    return prediction[0]
