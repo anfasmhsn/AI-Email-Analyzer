@@ -1,7 +1,0 @@
-email,category,sentiment,priority
-my salary has not been credited,Payroll Issue,Negative,Medium
-Need leave tomorrow,Leave Request,Negative,Low
-Need leave tomorrow,Leave Request,Negative,Low
-I won't be able to come to work tomorrow because I'm sick.,Resignation,Negative,Medium
-I won't be able to come to work tomorrow because I'm sick.,Leave Request,Negative,Low
-meeting is there,Meeting,Neutral,Low
