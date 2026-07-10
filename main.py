@@ -14,7 +14,7 @@ def get_sentiment(email: str) -> str:
     return "Neutral"
 
 from priority import get_priority
-from save_email import save_email
+from database import save_email, get_emails
 
 email = input("Enter Email: ")
 

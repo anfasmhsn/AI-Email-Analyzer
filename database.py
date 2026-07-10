@@ -5,7 +5,6 @@ DB_NAME = "data/emails.db"
 
 def create_table():
     conn = sqlite3.connect(DB_NAME)
-
     cursor = conn.cursor()
 
     cursor.execute("""
@@ -21,10 +20,9 @@ def create_table():
     conn.commit()
     conn.close()
 
+
 def save_email(email, category, sentiment, priority):
-
     conn = sqlite3.connect(DB_NAME)
-
     cursor = conn.cursor()
 
     cursor.execute("""
@@ -36,10 +34,9 @@ def save_email(email, category, sentiment, priority):
     conn.commit()
     conn.close()
 
+
 def get_emails():
-
     conn = sqlite3.connect(DB_NAME)
-
     cursor = conn.cursor()
 
     cursor.execute("SELECT * FROM emails")
@@ -50,10 +47,9 @@ def get_emails():
 
     return rows
 
+
 def delete_email(email_id):
-
     conn = sqlite3.connect(DB_NAME)
-
     cursor = conn.cursor()
 
     cursor.execute(

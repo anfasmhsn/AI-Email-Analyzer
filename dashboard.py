@@ -4,7 +4,7 @@ import pandas as pd
 from classifier import classify_email
 from sentiment import get_sentiment
 from priority import get_priority
-from save_email import save_email
+from database import save_email, get_emails
 st.title("📧 SmartMail AI")
 
 email = st.text_area("Enter Email")
@@ -44,7 +44,18 @@ if st.button("Analyze"):
     st.subheader("Email History")
 
 try:
-    df = pd.read_csv("data/email.csv")
+    emails = get_emails()
+
+    df = pd.DataFrame(
+        emails,
+        columns=[
+            "ID",
+            "email",
+            "category",
+            "sentiment",
+            "priority"
+        ]
+    )
     search = st.text_input("🔍 Search Emails")
 
     if search:

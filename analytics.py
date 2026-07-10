@@ -1,6 +1,19 @@
 import pandas as pd
 
-df = pd.read_csv("data/email.csv")
+from database import get_emails
+
+emails = get_emails()
+
+df = pd.DataFrame(
+    emails,
+    columns=[
+        "ID",
+        "email",
+        "category",
+        "sentiment",
+        "priority"
+    ]
+)
 
 print(df)
 
