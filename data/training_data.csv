@@ -1,57 +1,501 @@
 email,category
-My salary has not been credited,Payroll Issue
-Salary payment is delayed,Payroll Issue
-Payment has not arrived yet,Payroll Issue
-Payslip is missing,Payroll Issue
-My reimbursement is pending,Payroll Issue
-I have not received my bonus,Payroll Issue
-I would like to resign from my position,Resignation
-Please accept my resignation,Resignation
-I am submitting my resignation letter,Resignation
-I want to leave the company,Resignation
-This is my final working week,Resignation
-I need leave tomorrow,Leave Request
-Can I take leave next week?,Leave Request
-Requesting sick leave for two days,Leave Request
-I am applying for annual leave,Leave Request
-Need emergency leave today,Leave Request
-Interview scheduled for tomorrow,Recruitment
-Interview has been rescheduled,Recruitment
-Candidate confirmed interview,Recruitment
-Please attend the technical interview,Recruitment
-HR interview completed successfully,Recruitment
-I have a complaint against my manager,Complaint
-Workplace harassment complaint,Complaint
-Reporting inappropriate behaviour,Complaint
-Complaint regarding office facilities,Complaint
-I want to report an issue with my team,Complaint
-Project deadline is tomorrow,Project Update
-Project status has been updated,Project Update
-Weekly project report attached,Project Update
-Task completed successfully,Project Update
-Sprint review meeting scheduled,Project Update
-Meeting scheduled at 3 PM,Meeting
-Please attend today's meeting,Meeting
-Client meeting invitation,Meeting
-Board meeting agenda attached,Meeting
-Team meeting has been postponed,Meeting
-Training session starts tomorrow,Training
-Python training scheduled,Training
-Mandatory cybersecurity training,Training
-AI workshop registration confirmed,Training
-Employee onboarding training,Training
-Congratulations on your promotion,Promotion
-Promotion announcement,Promotion
-You have been promoted,Promotion
-Promotion effective next month,Promotion
-Promotion discussion scheduled,Promotion
-I won't be able to come to work tomorrow because I'm sick.,Leave Request
-I am sick today.,Leave Request
-I have a fever and need a day off.,Leave Request
-I'm not feeling well today.,Leave Request
-I need medical leave.,Leave Request
-I cannot attend work because of illness.,Leave Request
-I need one day leave due to health issues.,Leave Request
-I have a doctor's appointment tomorrow.,Leave Request
-I am hospitalized and cannot come to work.,Leave Request
-I need emergency leave.,Leave Request
+My salary has not been credited. Please help. Case 1,Payroll Issue
+My stipend has not been credited. Please help. Case 2,Payroll Issue
+My bonus has not been credited. Please help. Case 3,Payroll Issue
+My payroll has not been credited. Please help. Case 4,Payroll Issue
+My payslip has not been credited. Please help. Case 5,Payroll Issue
+My reimbursement has not been credited. Please help. Case 6,Payroll Issue
+My allowance has not been credited. Please help. Case 7,Payroll Issue
+My wages has not been credited. Please help. Case 8,Payroll Issue
+My overtime has not been credited. Please help. Case 9,Payroll Issue
+My incentive has not been credited. Please help. Case 10,Payroll Issue
+My salary has not been credited. Please help. Case 11,Payroll Issue
+My stipend has not been credited. Please help. Case 12,Payroll Issue
+My bonus has not been credited. Please help. Case 13,Payroll Issue
+My payroll has not been credited. Please help. Case 14,Payroll Issue
+My payslip has not been credited. Please help. Case 15,Payroll Issue
+My reimbursement has not been credited. Please help. Case 16,Payroll Issue
+My allowance has not been credited. Please help. Case 17,Payroll Issue
+My wages has not been credited. Please help. Case 18,Payroll Issue
+My overtime has not been credited. Please help. Case 19,Payroll Issue
+My incentive has not been credited. Please help. Case 20,Payroll Issue
+My salary has not been credited. Please help. Case 21,Payroll Issue
+My stipend has not been credited. Please help. Case 22,Payroll Issue
+My bonus has not been credited. Please help. Case 23,Payroll Issue
+My payroll has not been credited. Please help. Case 24,Payroll Issue
+My payslip has not been credited. Please help. Case 25,Payroll Issue
+My reimbursement has not been credited. Please help. Case 26,Payroll Issue
+My allowance has not been credited. Please help. Case 27,Payroll Issue
+My wages has not been credited. Please help. Case 28,Payroll Issue
+My overtime has not been credited. Please help. Case 29,Payroll Issue
+My incentive has not been credited. Please help. Case 30,Payroll Issue
+My salary has not been credited. Please help. Case 31,Payroll Issue
+My stipend has not been credited. Please help. Case 32,Payroll Issue
+My bonus has not been credited. Please help. Case 33,Payroll Issue
+My payroll has not been credited. Please help. Case 34,Payroll Issue
+My payslip has not been credited. Please help. Case 35,Payroll Issue
+My reimbursement has not been credited. Please help. Case 36,Payroll Issue
+My allowance has not been credited. Please help. Case 37,Payroll Issue
+My wages has not been credited. Please help. Case 38,Payroll Issue
+My overtime has not been credited. Please help. Case 39,Payroll Issue
+My incentive has not been credited. Please help. Case 40,Payroll Issue
+My salary has not been credited. Please help. Case 41,Payroll Issue
+My stipend has not been credited. Please help. Case 42,Payroll Issue
+My bonus has not been credited. Please help. Case 43,Payroll Issue
+My payroll has not been credited. Please help. Case 44,Payroll Issue
+My payslip has not been credited. Please help. Case 45,Payroll Issue
+My reimbursement has not been credited. Please help. Case 46,Payroll Issue
+My allowance has not been credited. Please help. Case 47,Payroll Issue
+My wages has not been credited. Please help. Case 48,Payroll Issue
+My overtime has not been credited. Please help. Case 49,Payroll Issue
+My incentive has not been credited. Please help. Case 50,Payroll Issue
+I need sick leave tomorrow due to personal reasons. Request 1,Leave Request
+I need annual leave tomorrow due to personal reasons. Request 2,Leave Request
+I need casual leave tomorrow due to personal reasons. Request 3,Leave Request
+I need medical leave tomorrow due to personal reasons. Request 4,Leave Request
+I need emergency leave tomorrow due to personal reasons. Request 5,Leave Request
+I need doctor appointment tomorrow due to personal reasons. Request 6,Leave Request
+I need fever tomorrow due to personal reasons. Request 7,Leave Request
+I need hospital tomorrow due to personal reasons. Request 8,Leave Request
+I need family emergency tomorrow due to personal reasons. Request 9,Leave Request
+I need vacation tomorrow due to personal reasons. Request 10,Leave Request
+I need sick leave tomorrow due to personal reasons. Request 11,Leave Request
+I need annual leave tomorrow due to personal reasons. Request 12,Leave Request
+I need casual leave tomorrow due to personal reasons. Request 13,Leave Request
+I need medical leave tomorrow due to personal reasons. Request 14,Leave Request
+I need emergency leave tomorrow due to personal reasons. Request 15,Leave Request
+I need doctor appointment tomorrow due to personal reasons. Request 16,Leave Request
+I need fever tomorrow due to personal reasons. Request 17,Leave Request
+I need hospital tomorrow due to personal reasons. Request 18,Leave Request
+I need family emergency tomorrow due to personal reasons. Request 19,Leave Request
+I need vacation tomorrow due to personal reasons. Request 20,Leave Request
+I need sick leave tomorrow due to personal reasons. Request 21,Leave Request
+I need annual leave tomorrow due to personal reasons. Request 22,Leave Request
+I need casual leave tomorrow due to personal reasons. Request 23,Leave Request
+I need medical leave tomorrow due to personal reasons. Request 24,Leave Request
+I need emergency leave tomorrow due to personal reasons. Request 25,Leave Request
+I need doctor appointment tomorrow due to personal reasons. Request 26,Leave Request
+I need fever tomorrow due to personal reasons. Request 27,Leave Request
+I need hospital tomorrow due to personal reasons. Request 28,Leave Request
+I need family emergency tomorrow due to personal reasons. Request 29,Leave Request
+I need vacation tomorrow due to personal reasons. Request 30,Leave Request
+I need sick leave tomorrow due to personal reasons. Request 31,Leave Request
+I need annual leave tomorrow due to personal reasons. Request 32,Leave Request
+I need casual leave tomorrow due to personal reasons. Request 33,Leave Request
+I need medical leave tomorrow due to personal reasons. Request 34,Leave Request
+I need emergency leave tomorrow due to personal reasons. Request 35,Leave Request
+I need doctor appointment tomorrow due to personal reasons. Request 36,Leave Request
+I need fever tomorrow due to personal reasons. Request 37,Leave Request
+I need hospital tomorrow due to personal reasons. Request 38,Leave Request
+I need family emergency tomorrow due to personal reasons. Request 39,Leave Request
+I need vacation tomorrow due to personal reasons. Request 40,Leave Request
+I need sick leave tomorrow due to personal reasons. Request 41,Leave Request
+I need annual leave tomorrow due to personal reasons. Request 42,Leave Request
+I need casual leave tomorrow due to personal reasons. Request 43,Leave Request
+I need medical leave tomorrow due to personal reasons. Request 44,Leave Request
+I need emergency leave tomorrow due to personal reasons. Request 45,Leave Request
+I need doctor appointment tomorrow due to personal reasons. Request 46,Leave Request
+I need fever tomorrow due to personal reasons. Request 47,Leave Request
+I need hospital tomorrow due to personal reasons. Request 48,Leave Request
+I need family emergency tomorrow due to personal reasons. Request 49,Leave Request
+I need vacation tomorrow due to personal reasons. Request 50,Leave Request
+The interview has been scheduled for candidate 1.,Recruitment
+The candidate has been scheduled for candidate 2.,Recruitment
+The job application has been scheduled for candidate 3.,Recruitment
+The resume has been scheduled for candidate 4.,Recruitment
+The technical interview has been scheduled for candidate 5.,Recruitment
+The HR interview has been scheduled for candidate 6.,Recruitment
+The offer letter has been scheduled for candidate 7.,Recruitment
+The recruiter has been scheduled for candidate 8.,Recruitment
+The screening has been scheduled for candidate 9.,Recruitment
+The joining has been scheduled for candidate 10.,Recruitment
+The interview has been scheduled for candidate 11.,Recruitment
+The candidate has been scheduled for candidate 12.,Recruitment
+The job application has been scheduled for candidate 13.,Recruitment
+The resume has been scheduled for candidate 14.,Recruitment
+The technical interview has been scheduled for candidate 15.,Recruitment
+The HR interview has been scheduled for candidate 16.,Recruitment
+The offer letter has been scheduled for candidate 17.,Recruitment
+The recruiter has been scheduled for candidate 18.,Recruitment
+The screening has been scheduled for candidate 19.,Recruitment
+The joining has been scheduled for candidate 20.,Recruitment
+The interview has been scheduled for candidate 21.,Recruitment
+The candidate has been scheduled for candidate 22.,Recruitment
+The job application has been scheduled for candidate 23.,Recruitment
+The resume has been scheduled for candidate 24.,Recruitment
+The technical interview has been scheduled for candidate 25.,Recruitment
+The HR interview has been scheduled for candidate 26.,Recruitment
+The offer letter has been scheduled for candidate 27.,Recruitment
+The recruiter has been scheduled for candidate 28.,Recruitment
+The screening has been scheduled for candidate 29.,Recruitment
+The joining has been scheduled for candidate 30.,Recruitment
+The interview has been scheduled for candidate 31.,Recruitment
+The candidate has been scheduled for candidate 32.,Recruitment
+The job application has been scheduled for candidate 33.,Recruitment
+The resume has been scheduled for candidate 34.,Recruitment
+The technical interview has been scheduled for candidate 35.,Recruitment
+The HR interview has been scheduled for candidate 36.,Recruitment
+The offer letter has been scheduled for candidate 37.,Recruitment
+The recruiter has been scheduled for candidate 38.,Recruitment
+The screening has been scheduled for candidate 39.,Recruitment
+The joining has been scheduled for candidate 40.,Recruitment
+The interview has been scheduled for candidate 41.,Recruitment
+The candidate has been scheduled for candidate 42.,Recruitment
+The job application has been scheduled for candidate 43.,Recruitment
+The resume has been scheduled for candidate 44.,Recruitment
+The technical interview has been scheduled for candidate 45.,Recruitment
+The HR interview has been scheduled for candidate 46.,Recruitment
+The offer letter has been scheduled for candidate 47.,Recruitment
+The recruiter has been scheduled for candidate 48.,Recruitment
+The screening has been scheduled for candidate 49.,Recruitment
+The joining has been scheduled for candidate 50.,Recruitment
+I would like to report a harassment related complaint. Ticket 1.,Complaint
+I would like to report a manager related complaint. Ticket 2.,Complaint
+I would like to report a team related complaint. Ticket 3.,Complaint
+I would like to report a workplace related complaint. Ticket 4.,Complaint
+I would like to report a office related complaint. Ticket 5.,Complaint
+I would like to report a behavior related complaint. Ticket 6.,Complaint
+I would like to report a policy related complaint. Ticket 7.,Complaint
+I would like to report a equipment related complaint. Ticket 8.,Complaint
+I would like to report a bullying related complaint. Ticket 9.,Complaint
+I would like to report a issue related complaint. Ticket 10.,Complaint
+I would like to report a harassment related complaint. Ticket 11.,Complaint
+I would like to report a manager related complaint. Ticket 12.,Complaint
+I would like to report a team related complaint. Ticket 13.,Complaint
+I would like to report a workplace related complaint. Ticket 14.,Complaint
+I would like to report a office related complaint. Ticket 15.,Complaint
+I would like to report a behavior related complaint. Ticket 16.,Complaint
+I would like to report a policy related complaint. Ticket 17.,Complaint
+I would like to report a equipment related complaint. Ticket 18.,Complaint
+I would like to report a bullying related complaint. Ticket 19.,Complaint
+I would like to report a issue related complaint. Ticket 20.,Complaint
+I would like to report a harassment related complaint. Ticket 21.,Complaint
+I would like to report a manager related complaint. Ticket 22.,Complaint
+I would like to report a team related complaint. Ticket 23.,Complaint
+I would like to report a workplace related complaint. Ticket 24.,Complaint
+I would like to report a office related complaint. Ticket 25.,Complaint
+I would like to report a behavior related complaint. Ticket 26.,Complaint
+I would like to report a policy related complaint. Ticket 27.,Complaint
+I would like to report a equipment related complaint. Ticket 28.,Complaint
+I would like to report a bullying related complaint. Ticket 29.,Complaint
+I would like to report a issue related complaint. Ticket 30.,Complaint
+I would like to report a harassment related complaint. Ticket 31.,Complaint
+I would like to report a manager related complaint. Ticket 32.,Complaint
+I would like to report a team related complaint. Ticket 33.,Complaint
+I would like to report a workplace related complaint. Ticket 34.,Complaint
+I would like to report a office related complaint. Ticket 35.,Complaint
+I would like to report a behavior related complaint. Ticket 36.,Complaint
+I would like to report a policy related complaint. Ticket 37.,Complaint
+I would like to report a equipment related complaint. Ticket 38.,Complaint
+I would like to report a bullying related complaint. Ticket 39.,Complaint
+I would like to report a issue related complaint. Ticket 40.,Complaint
+I would like to report a harassment related complaint. Ticket 41.,Complaint
+I would like to report a manager related complaint. Ticket 42.,Complaint
+I would like to report a team related complaint. Ticket 43.,Complaint
+I would like to report a workplace related complaint. Ticket 44.,Complaint
+I would like to report a office related complaint. Ticket 45.,Complaint
+I would like to report a behavior related complaint. Ticket 46.,Complaint
+I would like to report a policy related complaint. Ticket 47.,Complaint
+I would like to report a equipment related complaint. Ticket 48.,Complaint
+I would like to report a bullying related complaint. Ticket 49.,Complaint
+I would like to report a issue related complaint. Ticket 50.,Complaint
+The project status has been updated successfully. Update 1.,Project Update
+The milestone status has been updated successfully. Update 2.,Project Update
+The deadline status has been updated successfully. Update 3.,Project Update
+The task status has been updated successfully. Update 4.,Project Update
+The report status has been updated successfully. Update 5.,Project Update
+The sprint status has been updated successfully. Update 6.,Project Update
+The deployment status has been updated successfully. Update 7.,Project Update
+The feature status has been updated successfully. Update 8.,Project Update
+The bug status has been updated successfully. Update 9.,Project Update
+The release status has been updated successfully. Update 10.,Project Update
+The project status has been updated successfully. Update 11.,Project Update
+The milestone status has been updated successfully. Update 12.,Project Update
+The deadline status has been updated successfully. Update 13.,Project Update
+The task status has been updated successfully. Update 14.,Project Update
+The report status has been updated successfully. Update 15.,Project Update
+The sprint status has been updated successfully. Update 16.,Project Update
+The deployment status has been updated successfully. Update 17.,Project Update
+The feature status has been updated successfully. Update 18.,Project Update
+The bug status has been updated successfully. Update 19.,Project Update
+The release status has been updated successfully. Update 20.,Project Update
+The project status has been updated successfully. Update 21.,Project Update
+The milestone status has been updated successfully. Update 22.,Project Update
+The deadline status has been updated successfully. Update 23.,Project Update
+The task status has been updated successfully. Update 24.,Project Update
+The report status has been updated successfully. Update 25.,Project Update
+The sprint status has been updated successfully. Update 26.,Project Update
+The deployment status has been updated successfully. Update 27.,Project Update
+The feature status has been updated successfully. Update 28.,Project Update
+The bug status has been updated successfully. Update 29.,Project Update
+The release status has been updated successfully. Update 30.,Project Update
+The project status has been updated successfully. Update 31.,Project Update
+The milestone status has been updated successfully. Update 32.,Project Update
+The deadline status has been updated successfully. Update 33.,Project Update
+The task status has been updated successfully. Update 34.,Project Update
+The report status has been updated successfully. Update 35.,Project Update
+The sprint status has been updated successfully. Update 36.,Project Update
+The deployment status has been updated successfully. Update 37.,Project Update
+The feature status has been updated successfully. Update 38.,Project Update
+The bug status has been updated successfully. Update 39.,Project Update
+The release status has been updated successfully. Update 40.,Project Update
+The project status has been updated successfully. Update 41.,Project Update
+The milestone status has been updated successfully. Update 42.,Project Update
+The deadline status has been updated successfully. Update 43.,Project Update
+The task status has been updated successfully. Update 44.,Project Update
+The report status has been updated successfully. Update 45.,Project Update
+The sprint status has been updated successfully. Update 46.,Project Update
+The deployment status has been updated successfully. Update 47.,Project Update
+The feature status has been updated successfully. Update 48.,Project Update
+The bug status has been updated successfully. Update 49.,Project Update
+The release status has been updated successfully. Update 50.,Project Update
+Please attend the meeting tomorrow at 10 AM. Meeting 1.,Meeting
+Please attend the client meeting tomorrow at 10 AM. Meeting 2.,Meeting
+Please attend the board meeting tomorrow at 10 AM. Meeting 3.,Meeting
+Please attend the team meeting tomorrow at 10 AM. Meeting 4.,Meeting
+Please attend the agenda tomorrow at 10 AM. Meeting 5.,Meeting
+Please attend the conference tomorrow at 10 AM. Meeting 6.,Meeting
+Please attend the discussion tomorrow at 10 AM. Meeting 7.,Meeting
+Please attend the review tomorrow at 10 AM. Meeting 8.,Meeting
+Please attend the sync tomorrow at 10 AM. Meeting 9.,Meeting
+Please attend the presentation tomorrow at 10 AM. Meeting 10.,Meeting
+Please attend the meeting tomorrow at 10 AM. Meeting 11.,Meeting
+Please attend the client meeting tomorrow at 10 AM. Meeting 12.,Meeting
+Please attend the board meeting tomorrow at 10 AM. Meeting 13.,Meeting
+Please attend the team meeting tomorrow at 10 AM. Meeting 14.,Meeting
+Please attend the agenda tomorrow at 10 AM. Meeting 15.,Meeting
+Please attend the conference tomorrow at 10 AM. Meeting 16.,Meeting
+Please attend the discussion tomorrow at 10 AM. Meeting 17.,Meeting
+Please attend the review tomorrow at 10 AM. Meeting 18.,Meeting
+Please attend the sync tomorrow at 10 AM. Meeting 19.,Meeting
+Please attend the presentation tomorrow at 10 AM. Meeting 20.,Meeting
+Please attend the meeting tomorrow at 10 AM. Meeting 21.,Meeting
+Please attend the client meeting tomorrow at 10 AM. Meeting 22.,Meeting
+Please attend the board meeting tomorrow at 10 AM. Meeting 23.,Meeting
+Please attend the team meeting tomorrow at 10 AM. Meeting 24.,Meeting
+Please attend the agenda tomorrow at 10 AM. Meeting 25.,Meeting
+Please attend the conference tomorrow at 10 AM. Meeting 26.,Meeting
+Please attend the discussion tomorrow at 10 AM. Meeting 27.,Meeting
+Please attend the review tomorrow at 10 AM. Meeting 28.,Meeting
+Please attend the sync tomorrow at 10 AM. Meeting 29.,Meeting
+Please attend the presentation tomorrow at 10 AM. Meeting 30.,Meeting
+Please attend the meeting tomorrow at 10 AM. Meeting 31.,Meeting
+Please attend the client meeting tomorrow at 10 AM. Meeting 32.,Meeting
+Please attend the board meeting tomorrow at 10 AM. Meeting 33.,Meeting
+Please attend the team meeting tomorrow at 10 AM. Meeting 34.,Meeting
+Please attend the agenda tomorrow at 10 AM. Meeting 35.,Meeting
+Please attend the conference tomorrow at 10 AM. Meeting 36.,Meeting
+Please attend the discussion tomorrow at 10 AM. Meeting 37.,Meeting
+Please attend the review tomorrow at 10 AM. Meeting 38.,Meeting
+Please attend the sync tomorrow at 10 AM. Meeting 39.,Meeting
+Please attend the presentation tomorrow at 10 AM. Meeting 40.,Meeting
+Please attend the meeting tomorrow at 10 AM. Meeting 41.,Meeting
+Please attend the client meeting tomorrow at 10 AM. Meeting 42.,Meeting
+Please attend the board meeting tomorrow at 10 AM. Meeting 43.,Meeting
+Please attend the team meeting tomorrow at 10 AM. Meeting 44.,Meeting
+Please attend the agenda tomorrow at 10 AM. Meeting 45.,Meeting
+Please attend the conference tomorrow at 10 AM. Meeting 46.,Meeting
+Please attend the discussion tomorrow at 10 AM. Meeting 47.,Meeting
+Please attend the review tomorrow at 10 AM. Meeting 48.,Meeting
+Please attend the sync tomorrow at 10 AM. Meeting 49.,Meeting
+Please attend the presentation tomorrow at 10 AM. Meeting 50.,Meeting
+The training starts next week. Enrollment 1.,Training
+The workshop starts next week. Enrollment 2.,Training
+The course starts next week. Enrollment 3.,Training
+The onboarding starts next week. Enrollment 4.,Training
+The python starts next week. Enrollment 5.,Training
+The cybersecurity starts next week. Enrollment 6.,Training
+The AI starts next week. Enrollment 7.,Training
+The learning starts next week. Enrollment 8.,Training
+The session starts next week. Enrollment 9.,Training
+The certification starts next week. Enrollment 10.,Training
+The training starts next week. Enrollment 11.,Training
+The workshop starts next week. Enrollment 12.,Training
+The course starts next week. Enrollment 13.,Training
+The onboarding starts next week. Enrollment 14.,Training
+The python starts next week. Enrollment 15.,Training
+The cybersecurity starts next week. Enrollment 16.,Training
+The AI starts next week. Enrollment 17.,Training
+The learning starts next week. Enrollment 18.,Training
+The session starts next week. Enrollment 19.,Training
+The certification starts next week. Enrollment 20.,Training
+The training starts next week. Enrollment 21.,Training
+The workshop starts next week. Enrollment 22.,Training
+The course starts next week. Enrollment 23.,Training
+The onboarding starts next week. Enrollment 24.,Training
+The python starts next week. Enrollment 25.,Training
+The cybersecurity starts next week. Enrollment 26.,Training
+The AI starts next week. Enrollment 27.,Training
+The learning starts next week. Enrollment 28.,Training
+The session starts next week. Enrollment 29.,Training
+The certification starts next week. Enrollment 30.,Training
+The training starts next week. Enrollment 31.,Training
+The workshop starts next week. Enrollment 32.,Training
+The course starts next week. Enrollment 33.,Training
+The onboarding starts next week. Enrollment 34.,Training
+The python starts next week. Enrollment 35.,Training
+The cybersecurity starts next week. Enrollment 36.,Training
+The AI starts next week. Enrollment 37.,Training
+The learning starts next week. Enrollment 38.,Training
+The session starts next week. Enrollment 39.,Training
+The certification starts next week. Enrollment 40.,Training
+The training starts next week. Enrollment 41.,Training
+The workshop starts next week. Enrollment 42.,Training
+The course starts next week. Enrollment 43.,Training
+The onboarding starts next week. Enrollment 44.,Training
+The python starts next week. Enrollment 45.,Training
+The cybersecurity starts next week. Enrollment 46.,Training
+The AI starts next week. Enrollment 47.,Training
+The learning starts next week. Enrollment 48.,Training
+The session starts next week. Enrollment 49.,Training
+The certification starts next week. Enrollment 50.,Training
+My promotion discussion is scheduled. Reference 1.,Promotion
+My appraisal discussion is scheduled. Reference 2.,Promotion
+My performance discussion is scheduled. Reference 3.,Promotion
+My designation discussion is scheduled. Reference 4.,Promotion
+My increment discussion is scheduled. Reference 5.,Promotion
+My career discussion is scheduled. Reference 6.,Promotion
+My lead role discussion is scheduled. Reference 7.,Promotion
+My manager discussion is scheduled. Reference 8.,Promotion
+My recognition discussion is scheduled. Reference 9.,Promotion
+My achievement discussion is scheduled. Reference 10.,Promotion
+My promotion discussion is scheduled. Reference 11.,Promotion
+My appraisal discussion is scheduled. Reference 12.,Promotion
+My performance discussion is scheduled. Reference 13.,Promotion
+My designation discussion is scheduled. Reference 14.,Promotion
+My increment discussion is scheduled. Reference 15.,Promotion
+My career discussion is scheduled. Reference 16.,Promotion
+My lead role discussion is scheduled. Reference 17.,Promotion
+My manager discussion is scheduled. Reference 18.,Promotion
+My recognition discussion is scheduled. Reference 19.,Promotion
+My achievement discussion is scheduled. Reference 20.,Promotion
+My promotion discussion is scheduled. Reference 21.,Promotion
+My appraisal discussion is scheduled. Reference 22.,Promotion
+My performance discussion is scheduled. Reference 23.,Promotion
+My designation discussion is scheduled. Reference 24.,Promotion
+My increment discussion is scheduled. Reference 25.,Promotion
+My career discussion is scheduled. Reference 26.,Promotion
+My lead role discussion is scheduled. Reference 27.,Promotion
+My manager discussion is scheduled. Reference 28.,Promotion
+My recognition discussion is scheduled. Reference 29.,Promotion
+My achievement discussion is scheduled. Reference 30.,Promotion
+My promotion discussion is scheduled. Reference 31.,Promotion
+My appraisal discussion is scheduled. Reference 32.,Promotion
+My performance discussion is scheduled. Reference 33.,Promotion
+My designation discussion is scheduled. Reference 34.,Promotion
+My increment discussion is scheduled. Reference 35.,Promotion
+My career discussion is scheduled. Reference 36.,Promotion
+My lead role discussion is scheduled. Reference 37.,Promotion
+My manager discussion is scheduled. Reference 38.,Promotion
+My recognition discussion is scheduled. Reference 39.,Promotion
+My achievement discussion is scheduled. Reference 40.,Promotion
+My promotion discussion is scheduled. Reference 41.,Promotion
+My appraisal discussion is scheduled. Reference 42.,Promotion
+My performance discussion is scheduled. Reference 43.,Promotion
+My designation discussion is scheduled. Reference 44.,Promotion
+My increment discussion is scheduled. Reference 45.,Promotion
+My career discussion is scheduled. Reference 46.,Promotion
+My lead role discussion is scheduled. Reference 47.,Promotion
+My manager discussion is scheduled. Reference 48.,Promotion
+My recognition discussion is scheduled. Reference 49.,Promotion
+My achievement discussion is scheduled. Reference 50.,Promotion
+I would like to discuss my resignation. Reference 1.,Resignation
+I would like to discuss my notice period. Reference 2.,Resignation
+I would like to discuss my final day. Reference 3.,Resignation
+I would like to discuss my quit. Reference 4.,Resignation
+I would like to discuss my leave company. Reference 5.,Resignation
+I would like to discuss my exit. Reference 6.,Resignation
+I would like to discuss my resign. Reference 7.,Resignation
+I would like to discuss my handover. Reference 8.,Resignation
+I would like to discuss my last working day. Reference 9.,Resignation
+I would like to discuss my farewell. Reference 10.,Resignation
+I would like to discuss my resignation. Reference 11.,Resignation
+I would like to discuss my notice period. Reference 12.,Resignation
+I would like to discuss my final day. Reference 13.,Resignation
+I would like to discuss my quit. Reference 14.,Resignation
+I would like to discuss my leave company. Reference 15.,Resignation
+I would like to discuss my exit. Reference 16.,Resignation
+I would like to discuss my resign. Reference 17.,Resignation
+I would like to discuss my handover. Reference 18.,Resignation
+I would like to discuss my last working day. Reference 19.,Resignation
+I would like to discuss my farewell. Reference 20.,Resignation
+I would like to discuss my resignation. Reference 21.,Resignation
+I would like to discuss my notice period. Reference 22.,Resignation
+I would like to discuss my final day. Reference 23.,Resignation
+I would like to discuss my quit. Reference 24.,Resignation
+I would like to discuss my leave company. Reference 25.,Resignation
+I would like to discuss my exit. Reference 26.,Resignation
+I would like to discuss my resign. Reference 27.,Resignation
+I would like to discuss my handover. Reference 28.,Resignation
+I would like to discuss my last working day. Reference 29.,Resignation
+I would like to discuss my farewell. Reference 30.,Resignation
+I would like to discuss my resignation. Reference 31.,Resignation
+I would like to discuss my notice period. Reference 32.,Resignation
+I would like to discuss my final day. Reference 33.,Resignation
+I would like to discuss my quit. Reference 34.,Resignation
+I would like to discuss my leave company. Reference 35.,Resignation
+I would like to discuss my exit. Reference 36.,Resignation
+I would like to discuss my resign. Reference 37.,Resignation
+I would like to discuss my handover. Reference 38.,Resignation
+I would like to discuss my last working day. Reference 39.,Resignation
+I would like to discuss my farewell. Reference 40.,Resignation
+I would like to discuss my resignation. Reference 41.,Resignation
+I would like to discuss my notice period. Reference 42.,Resignation
+I would like to discuss my final day. Reference 43.,Resignation
+I would like to discuss my quit. Reference 44.,Resignation
+I would like to discuss my leave company. Reference 45.,Resignation
+I would like to discuss my exit. Reference 46.,Resignation
+I would like to discuss my resign. Reference 47.,Resignation
+I would like to discuss my handover. Reference 48.,Resignation
+I would like to discuss my last working day. Reference 49.,Resignation
+I would like to discuss my farewell. Reference 50.,Resignation
+I have a question about office timing. Inquiry 1.,General Inquiry
+I have a question about holiday. Inquiry 2.,General Inquiry
+I have a question about policy. Inquiry 3.,General Inquiry
+I have a question about benefits. Inquiry 4.,General Inquiry
+I have a question about parking. Inquiry 5.,General Inquiry
+I have a question about cafeteria. Inquiry 6.,General Inquiry
+I have a question about ID card. Inquiry 7.,General Inquiry
+I have a question about WFH. Inquiry 8.,General Inquiry
+I have a question about attendance. Inquiry 9.,General Inquiry
+I have a question about contact HR. Inquiry 10.,General Inquiry
+I have a question about office timing. Inquiry 11.,General Inquiry
+I have a question about holiday. Inquiry 12.,General Inquiry
+I have a question about policy. Inquiry 13.,General Inquiry
+I have a question about benefits. Inquiry 14.,General Inquiry
+I have a question about parking. Inquiry 15.,General Inquiry
+I have a question about cafeteria. Inquiry 16.,General Inquiry
+I have a question about ID card. Inquiry 17.,General Inquiry
+I have a question about WFH. Inquiry 18.,General Inquiry
+I have a question about attendance. Inquiry 19.,General Inquiry
+I have a question about contact HR. Inquiry 20.,General Inquiry
+I have a question about office timing. Inquiry 21.,General Inquiry
+I have a question about holiday. Inquiry 22.,General Inquiry
+I have a question about policy. Inquiry 23.,General Inquiry
+I have a question about benefits. Inquiry 24.,General Inquiry
+I have a question about parking. Inquiry 25.,General Inquiry
+I have a question about cafeteria. Inquiry 26.,General Inquiry
+I have a question about ID card. Inquiry 27.,General Inquiry
+I have a question about WFH. Inquiry 28.,General Inquiry
+I have a question about attendance. Inquiry 29.,General Inquiry
+I have a question about contact HR. Inquiry 30.,General Inquiry
+I have a question about office timing. Inquiry 31.,General Inquiry
+I have a question about holiday. Inquiry 32.,General Inquiry
+I have a question about policy. Inquiry 33.,General Inquiry
+I have a question about benefits. Inquiry 34.,General Inquiry
+I have a question about parking. Inquiry 35.,General Inquiry
+I have a question about cafeteria. Inquiry 36.,General Inquiry
+I have a question about ID card. Inquiry 37.,General Inquiry
+I have a question about WFH. Inquiry 38.,General Inquiry
+I have a question about attendance. Inquiry 39.,General Inquiry
+I have a question about contact HR. Inquiry 40.,General Inquiry
+I have a question about office timing. Inquiry 41.,General Inquiry
+I have a question about holiday. Inquiry 42.,General Inquiry
+I have a question about policy. Inquiry 43.,General Inquiry
+I have a question about benefits. Inquiry 44.,General Inquiry
+I have a question about parking. Inquiry 45.,General Inquiry
+I have a question about cafeteria. Inquiry 46.,General Inquiry
+I have a question about ID card. Inquiry 47.,General Inquiry
+I have a question about WFH. Inquiry 48.,General Inquiry
+I have a question about attendance. Inquiry 49.,General Inquiry
+I have a question about contact HR. Inquiry 50.,General Inquiry
