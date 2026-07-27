@@ -8,12 +8,15 @@ def create_table():
     cursor = conn.cursor()
 
     cursor.execute("""
-        CREATE TABLE IF NOT EXISTS emails (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            email TEXT,
-            category TEXT,
-            sentiment TEXT,
-            priority TEXT
+    CREATE TABLE IF NOT EXISTS emails (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        sender TEXT,
+        subject TEXT,
+        body TEXT,
+        category TEXT,
+        sentiment TEXT,
+        priority TEXT,
+        date TEXT
         )
     """)
 
@@ -21,15 +24,39 @@ def create_table():
     conn.close()
 
 
-def save_email(email, category, sentiment, priority):
+def save_email(
+    sender,
+    subject,
+    body,
+    category,
+    sentiment,
+    priority,
+    date
+):
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
 
     cursor.execute("""
         INSERT INTO emails
-        (email, category, sentiment, priority)
-        VALUES (?, ?, ?, ?)
-    """, (email, category, sentiment, priority))
+        (
+            sender,
+            subject,
+            body,
+            category,
+            sentiment,
+            priority,
+            date
+        )
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+    """, (
+        sender,
+        subject,
+        body,
+        category,
+        sentiment,
+        priority,
+        date
+    ))
 
     conn.commit()
     conn.close()

@@ -1,6 +1,7 @@
 from gmail_service import gmail_login
 import base64
 
+
 def fetch_emails(limit=5):
 
     service = gmail_login()
@@ -24,27 +25,33 @@ def fetch_emails(limit=5):
 
         subject = ""
         sender = ""
+        date = ""
         body = ""
 
         headers = message["payload"]["headers"]
 
         for header in headers:
+
             if header["name"] == "Subject":
                 subject = header["value"]
 
-            if header["name"] == "From":
+            elif header["name"] == "From":
                 sender = header["value"]
+
+            elif header["name"] == "Date":
+                date = header["value"]
 
         if "data" in message["payload"]["body"]:
 
             body = base64.urlsafe_b64decode(
                 message["payload"]["body"]["data"]
-            ).decode()
+            ).decode("utf-8")
 
         emails.append({
-            "from": sender,
+            "sender": sender,
             "subject": subject,
-            "body": body
+            "body": body,
+            "date": date
         })
 
     return emails
