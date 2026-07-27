@@ -77,23 +77,24 @@ try:
     df = pd.DataFrame(
         emails,
         columns=[
-            "ID",
-            "email",
+            "id",
+            "sender",
+            "subject",
+            "body",
             "category",
             "sentiment",
-            "priority"
+            "priority",
+            "date"
         ]
     )
     search = st.text_input("🔍 Search Emails")
 
     if search:
         df = df[
-            df["email"].str.contains(
-                search,
-                case=False,
-                na=False
-            )
-        ]
+            df["subject"].str.contains(search, case=False, na=False)
+            |
+            df["sender"].str.contains(search, case=False, na=False)
+            ]
     selected_category = st.selectbox(
         "Filter Category",
         ["All"] + list(df["category"].unique())
