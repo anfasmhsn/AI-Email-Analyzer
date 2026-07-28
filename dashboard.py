@@ -44,10 +44,13 @@ if st.button("Analyze"):
     priority = get_priority(email, category, sentiment)
 
     save_email(
-        email,
+        sender,
+        subject,
+        body,
         category,
         sentiment,
-        priority
+        priority,
+        date
     )
 
     st.success("Analysis Complete")
@@ -87,6 +90,42 @@ try:
             "date"
         ]
     )
+    total_emails = len(df)
+    
+    high_priority = len(
+        df[df["priority"] == "High"]
+        )
+    
+    total_categories = df["category"].nunique()
+    
+    if not df.empty:
+        top_sender = df["sender"].value_counts().idxmax()
+    else:
+        top_sender = "N/A"
+    
+    st.subheader("📊 Dashboard")
+
+    col1, col2, col3, col4 = st.columns(4)
+
+    col1.metric(
+        "📧 Total Emails",
+        total_emails
+    )
+
+    col2.metric(
+        "🔥 High Priority",
+        high_priority
+    )
+
+    col3.metric(
+        "📂 Categories",
+        total_categories
+    )
+
+    col4.metric(
+        "👤 Top Sender",
+        top_sender
+    )    
     search = st.text_input("🔍 Search Emails")
 
     if search:
