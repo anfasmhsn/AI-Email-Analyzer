@@ -103,7 +103,7 @@ try:
     else:
         top_sender = "N/A"
     
-    st.subheader("📊 Dashboard")
+    st.subheader("Dashboard")
 
     col1, col2, col3, col4 = st.columns(4)
 
