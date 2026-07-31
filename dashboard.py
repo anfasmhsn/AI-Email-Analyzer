@@ -90,6 +90,18 @@ try:
             "date"
         ]
     )
+    df["Select"] = False
+    priority_order = {
+    "High": 0,
+    "Medium": 1,
+    "Low": 2
+    }
+
+    df["priority_order"] = df["priority"].map(priority_order)
+
+    df = df.sort_values("priority_order")
+
+    df = df.drop(columns=["priority_order"])
     total_emails = len(df)
     
     high_priority = len(
@@ -143,8 +155,17 @@ try:
         df = df[
             df["category"] == selected_category
     ]    
-    st.dataframe(df)
-
+    edited_df = st.data_editor(
+        df,
+        hide_index=True,
+        use_container_width=True
+    )
+    selected_rows = edited_df[
+        edited_df["Select"] == True
+    ]
+    st.write(f"Selected Emails: {len(selected_rows)}")
+    if st.button("🗑 Delete Selected"):
+        st.write(selected_rows)
     st.subheader("Category Distribution")
     category_counts = df["category"].value_counts()
     st.write(category_counts)
