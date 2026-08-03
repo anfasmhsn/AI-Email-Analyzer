@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-
+from st_aggrid import AgGrid, GridOptionsBuilder
 from classifier import classify_email
 from sentiment import get_sentiment
 from priority import get_priority
@@ -155,18 +155,29 @@ try:
         df = df[
             df["category"] == selected_category
     ]    
-    edited_df = st.data_editor(
-        df,
-        hide_index=True,
-        use_container_width=True
+    gb = GridOptionsBuilder.from_dataframe(df)
+
+    gb.configure_selection(
+        selection_mode="multiple",
+        use_checkbox=True
     )
-    selected_rows = edited_df[
-        edited_df["Select"] == True
-    ]
+
+    grid_options = gb.build()
+
+    grid_response = AgGrid(
+        df,
+        gridOptions=grid_options,
+        fit_columns_on_grid_load=True,
+        update_mode="SELECTION_CHANGED"
+    )
+
+    selected_rows = grid_response.get("selected_rows", [])
+    if selected_rows is None:
+        selected_rows = []
     st.write(f"Selected Emails: {len(selected_rows)}")
     if st.button("🗑 Delete Selected"):
 
-        ids = selected_rows["id"].tolist()
+        ids = [row["id"] for row in selected_rows]
 
         if ids:
             delete_selected(ids)
