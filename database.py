@@ -3,6 +3,18 @@ import sqlite3
 DB_NAME = "data/emails.db"
 
 
+def delete_selected(email_ids):
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
+
+    cursor.executemany(
+        "DELETE FROM emails WHERE id=?",
+        [(i,) for i in email_ids]
+    )
+
+    conn.commit()
+    conn.close()
+
 def create_table():
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()

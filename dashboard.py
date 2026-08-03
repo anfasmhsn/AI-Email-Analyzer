@@ -4,7 +4,7 @@ import pandas as pd
 from classifier import classify_email
 from sentiment import get_sentiment
 from priority import get_priority
-from database import save_email, get_emails
+from database import save_email, get_emails, delete_selected
 from gmail_fetch import fetch_emails
 st.title("📧 SmartMail AI")
 if st.button("📥 Import Gmail"):
@@ -165,7 +165,15 @@ try:
     ]
     st.write(f"Selected Emails: {len(selected_rows)}")
     if st.button("🗑 Delete Selected"):
-        st.write(selected_rows)
+
+        ids = selected_rows["id"].tolist()
+
+        if ids:
+            delete_selected(ids)
+            st.success("Selected emails deleted!")
+            st.rerun()
+        else:
+            st.warning("Please select at least one email.")
     st.subheader("Category Distribution")
     category_counts = df["category"].value_counts()
     st.write(category_counts)
