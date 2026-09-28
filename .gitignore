@@ -2,6 +2,7 @@ credentials.json
 token.json
 .env
 .venv/
+venv/
 __pycache__/
 *.pyc
 data/emails.db
