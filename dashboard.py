@@ -20,7 +20,8 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
-
+if "page" not in st.session_state:
+    st.session_state.page = "Inbox"
 
 # =========================================================
 # CUSTOM CSS
@@ -190,40 +191,31 @@ with st.sidebar:
         st.rerun()
 
     st.divider()
-
     # -----------------------------------------------------
     # NAVIGATION
     # -----------------------------------------------------
 
     st.markdown("### 📬 Mail")
 
-    st.button(
-        "📥 Inbox",
-        use_container_width=True
-    )
+    if st.button("📥 Inbox", use_container_width=True):
+        st.session_state.page = "Inbox"
+        st.rerun()
 
-    st.button(
-        "🔥 High Priority",
-        use_container_width=True
-    )
+    if st.button("🔥 High Priority", use_container_width=True):
+        st.session_state.page = "High Priority"
+        st.rerun()
 
-    st.button(
-        "⭐ Starred",
-        use_container_width=True
-    )
+    if st.button("⭐ Starred", use_container_width=True):
+        st.session_state.page = "Starred"
+        st.rerun()
 
-    st.button(
-        "🕒 Snoozed",
-        use_container_width=True
-    )
+    if st.button("📤 Sent", use_container_width=True):
+        st.session_state.page = "Sent"
+        st.rerun()
 
-    st.button(
-        "🗑 Deleted",
-        use_container_width=True
-    )
-
-    st.divider()
-
+    if st.button("📝 Drafts", use_container_width=True):
+        st.session_state.page = "Drafts"
+        st.rerun()
     # -----------------------------------------------------
     # MANUAL EMAIL ANALYSIS
     # -----------------------------------------------------
@@ -482,7 +474,35 @@ if selected_category != "All":
         filtered_df["category"]
         == selected_category
     ]
+# =========================================================
+# SIDEBAR PAGE FILTER
+# =========================================================
 
+if st.session_state.page == "High Priority":
+
+    filtered_df = filtered_df[
+        filtered_df["priority"] == "High"
+    ]
+
+elif st.session_state.page == "Starred":
+
+    # Starred support will be added later
+    filtered_df = filtered_df.iloc[0:0]
+
+elif st.session_state.page == "Sent":
+
+    # Sent support will be added later
+    filtered_df = filtered_df.iloc[0:0]
+
+elif st.session_state.page == "Drafts":
+
+    # Draft support will be added later
+    filtered_df = filtered_df.iloc[0:0]
+
+elif st.session_state.page == "Inbox":
+
+    # Show all imported emails
+    filtered_df = filtered_df
 
 # =========================================================
 # PRIORITY SORT
