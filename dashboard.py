@@ -540,7 +540,6 @@ display_df["subject"] = (
     .str.slice(0, 80)
 )
 
-
 # =========================================================
 # AGGRID
 # =========================================================
@@ -549,7 +548,6 @@ gb = GridOptionsBuilder.from_dataframe(
     display_df
 )
 
-
 gb.configure_default_column(
     editable=False,
     sortable=True,
@@ -557,21 +555,18 @@ gb.configure_default_column(
     resizable=True
 )
 
-
-# Checkbox selection
+# Allow checkbox + row selection
 gb.configure_selection(
     "multiple",
     use_checkbox=True,
     pre_selected_rows=[]
 )
 
-
 gb.configure_grid_options(
     rowSelection="multiple",
-    suppressRowClickSelection=True,
+    suppressRowClickSelection=False,
     animateRows=True
 )
-
 
 # Column widths
 gb.configure_column(
@@ -615,7 +610,6 @@ gb.configure_column(
     width=160
 )
 
-
 grid = AgGrid(
     display_df,
     gridOptions=gb.build(),
@@ -628,15 +622,17 @@ grid = AgGrid(
 
 
 # =========================================================
-# ACTION BUTTONS
+# SELECTED EMAIL
 # =========================================================
 
 selected = grid["selected_rows"]
 
 
-action1, action2, action3 = st.columns(
-    [1, 1, 4]
-)
+# =========================================================
+# ACTION BUTTONS
+# =========================================================
+
+action1, action2, action3 = st.columns([1, 1, 4])
 
 
 # ---------------------------------------------------------
@@ -652,45 +648,37 @@ with action1:
 
         if selected is None:
 
-            st.warning(
-                "Select an email first."
-            )
+            st.warning("Select an email first.")
 
-        elif isinstance(
-            selected,
-            pd.DataFrame
-        ):
+        elif isinstance(selected, pd.DataFrame):
 
             if selected.empty:
 
-                st.warning(
-                    "Select an email first."
-                )
+                st.warning("Select an email first.")
 
             else:
 
-                st.session_state[
-                    "opened_email"
-                ] = selected.iloc[0]["id"]
+                email_id = int(
+                    selected.iloc[0]["id"]
+                )
+
+                st.session_state["opened_email"] = email_id
 
                 st.rerun()
 
-        elif isinstance(
-            selected,
-            list
-        ):
+        elif isinstance(selected, list):
 
             if len(selected) == 0:
 
-                st.warning(
-                    "Select an email first."
-                )
+                st.warning("Select an email first.")
 
             else:
 
-                st.session_state[
-                    "opened_email"
-                ] = selected[0]["id"]
+                email_id = int(
+                    selected[0]["id"]
+                )
+
+                st.session_state["opened_email"] = email_id
 
                 st.rerun()
 
@@ -708,24 +696,17 @@ with action2:
 
         if selected is None:
 
-            st.warning(
-                "Select email(s) first."
-            )
+            st.warning("Select email(s) first.")
 
-        elif isinstance(
-            selected,
-            pd.DataFrame
-        ):
+        elif isinstance(selected, pd.DataFrame):
 
             if selected.empty:
 
-                st.warning(
-                    "Select email(s) first."
-                )
+                st.warning("Select email(s) first.")
 
             else:
 
-                ids = selected["id"].tolist()
+                ids = selected["id"].astype(int).tolist()
 
                 delete_selected(ids)
 
@@ -735,21 +716,16 @@ with action2:
 
                 st.rerun()
 
-        elif isinstance(
-            selected,
-            list
-        ):
+        elif isinstance(selected, list):
 
             if len(selected) == 0:
 
-                st.warning(
-                    "Select email(s) first."
-                )
+                st.warning("Select email(s) first.")
 
             else:
 
                 ids = [
-                    row["id"]
+                    int(row["id"])
                     for row in selected
                 ]
 
@@ -760,7 +736,6 @@ with action2:
                 )
 
                 st.rerun()
-
 
 # =========================================================
 # OPENED EMAIL
