@@ -173,13 +173,15 @@ with st.sidebar:
                 )
 
                 save_email(
+                    mail.get("gmail_id", ""),
                     mail.get("sender", ""),
                     mail.get("subject", ""),
                     mail.get("body", ""),
                     category,
                     sentiment,
                     priority,
-                    mail.get("date", "")
+                    mail.get("date", ""),
+                    ",".join(mail.get("labels", []))
                 )
 
                 imported_count += 1
@@ -242,13 +244,15 @@ df = pd.DataFrame(
     emails,
     columns=[
         "id",
+        "gmail_id",
         "sender",
         "subject",
         "body",
         "category",
         "sentiment",
         "priority",
-        "date"
+        "date",
+        "labels"
     ]
 )
 

@@ -2,7 +2,46 @@ from gmail_service import gmail_login
 import base64
 
 
-def fetch_emails(limit=5):
+def get_body(payload):
+
+    body = ""
+
+    # Simple email
+    if "body" in payload and payload["body"].get("data"):
+        body = base64.urlsafe_b64decode(
+            payload["body"]["data"]
+        ).decode("utf-8", errors="ignore")
+
+    # Multipart email
+    elif "parts" in payload:
+
+        for part in payload["parts"]:
+
+            if part["mimeType"] == "text/plain":
+
+                data = part.get("body", {}).get("data")
+
+                if data:
+                    body = base64.urlsafe_b64decode(
+                        data
+                    ).decode(
+                        "utf-8",
+                        errors="ignore"
+                    )
+
+                    break
+
+            elif "parts" in part:
+
+                body = get_body(part)
+
+                if body:
+                    break
+
+    return body
+
+
+def fetch_emails(limit=20):
 
     service = gmail_login()
 
@@ -26,32 +65,51 @@ def fetch_emails(limit=5):
         subject = ""
         sender = ""
         date = ""
-        body = ""
 
-        headers = message["payload"]["headers"]
+        headers = message["payload"].get(
+            "headers",
+            []
+        )
 
         for header in headers:
 
-            if header["name"] == "Subject":
+            name = header["name"].lower()
+
+            if name == "subject":
                 subject = header["value"]
 
-            elif header["name"] == "From":
+            elif name == "from":
                 sender = header["value"]
 
-            elif header["name"] == "Date":
+            elif name == "date":
                 date = header["value"]
 
-        if "data" in message["payload"]["body"]:
+        # -----------------------------------------
+        # GMAIL LABELS
+        # -----------------------------------------
 
-            body = base64.urlsafe_b64decode(
-                message["payload"]["body"]["data"]
-            ).decode("utf-8")
+        labels = message.get(
+            "labelIds",
+            []
+        )
 
         emails.append({
+
+            # Gmail unique message ID
+            "gmail_id": msg["id"],
+
             "sender": sender,
+
             "subject": subject,
-            "body": body,
-            "date": date
+
+            "body": get_body(
+                message["payload"]
+            ),
+
+            "date": date,
+
+            # Gmail labels
+            "labels": labels
         })
 
     return emails

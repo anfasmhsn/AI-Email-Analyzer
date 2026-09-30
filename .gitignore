@@ -1,8 +1,21 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Secrets
 credentials.json
 token.json
 .env
-.venv/
-venv/
-__pycache__/
-*.pyc
+
+# Local database
 data/emails.db
+
+# Chroma vector database
+data/email_chroma/
+
+# Cache
+.cache/
