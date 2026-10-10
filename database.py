@@ -198,7 +198,6 @@ def delete_email(email_id):
     )
 
     conn.commit()
-
     conn.close()
     
 create_table()
