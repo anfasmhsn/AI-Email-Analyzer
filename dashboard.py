@@ -1,4 +1,5 @@
 import streamlit as st
+from chatbot.chat import ask_chatbot
 import pandas as pd
 from st_aggrid import AgGrid, GridOptionsBuilder, GridUpdateMode
 
@@ -926,3 +927,126 @@ if not filtered_df.empty:
         "smartmail_report.csv",
         "text/csv"
     )
+# ==========================================
+# FLOATING SMARTMAIL AI CHATBOT
+# ==========================================
+
+st.markdown("""
+<style>
+/* Floating chatbot button */
+div.stButton > button[kind="secondary"] {
+    border-radius: 50%;
+}
+
+/* Chat panel */
+.chatbot-panel {
+    position: fixed;
+    right: 24px;
+    bottom: 100px;
+    width: 350px;
+    max-width: calc(100vw - 40px);
+    height: 480px;
+    max-height: 70vh;
+    background: #111827;
+    border: 1px solid #374151;
+    border-radius: 18px;
+    padding: 16px;
+    z-index: 999;
+    color: white;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+</style>
+""", unsafe_allow_html=True)
+
+# Initialize chatbot state
+if "chatbot_open" not in st.session_state:
+    st.session_state.chatbot_open = False
+
+if "chat_messages" not in st.session_state:
+    st.session_state.chat_messages = []
+
+# Floating bot button
+st.markdown("""
+<style>
+div[data-testid="stVerticalBlock"]:has(.bot-anchor) {
+    position: relative;
+}
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown('<div class="bot-anchor"></div>', unsafe_allow_html=True)
+
+button_col1, button_col2 = st.columns([9, 1])
+
+with button_col2:
+    if st.button(
+        "🤖",
+        key="floating_chatbot_button",
+        help="Chat with SmartMail AI"
+    ):
+        st.session_state.chatbot_open = (
+            not st.session_state.chatbot_open
+        )
+
+# Chat panel
+if st.session_state.chatbot_open:
+
+    with st.container(border=True):
+
+        header_col1, header_col2 = st.columns([5, 1])
+
+        with header_col1:
+            st.subheader("🤖 SmartMail AI")
+            st.caption("Your intelligent email assistant")
+
+        with header_col2:
+            if st.button("✕", key="close_chatbot"):
+                st.session_state.chatbot_open = False
+                st.rerun()
+
+        st.divider()
+
+        # Welcome message
+        if not st.session_state.chat_messages:
+            st.info(
+                "Hi! 👋 Ask me about your emails, "
+                "salary messages, job opportunities, "
+                "or high-priority emails."
+            )
+
+        # Display chat history
+        for message in st.session_state.chat_messages:
+
+            with st.chat_message(message["role"]):
+                st.markdown(message["content"])
+
+        # User input
+        question = st.chat_input(
+            "Ask anything about your emails...",
+            key="smartmail_chat_input"
+        )
+
+        if question:
+
+            st.session_state.chat_messages.append({
+                "role": "user",
+                "content": question
+            })
+
+            with st.spinner("Searching your emails..."):
+
+                try:
+                    answer = ask_chatbot(question)
+
+                except Exception as error:
+                    answer = (
+                        "Sorry, I couldn't process your question. "
+                        f"Error: {error}"
+                    )
+
+            st.session_state.chat_messages.append({
+                "role": "assistant",
+                "content": answer
+            })
+
+            st.rerun()    
