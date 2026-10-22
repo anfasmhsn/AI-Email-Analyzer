@@ -31,12 +31,13 @@ if "page" not in st.session_state:
 st.markdown("""
 <style>
 
-    /* Remove default Streamlit top spacing */
+    /* Main dashboard spacing — FIXED */
     .block-container {
-        padding-top: 1rem;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-        max-width: 100%;
+        padding-top: 3rem !important;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+        padding-bottom: 2rem !important;
+        max-width: 100% !important;
     }
 
     /* Sidebar */
@@ -52,6 +53,7 @@ st.markdown("""
     .smartmail-title {
         font-size: 30px;
         font-weight: 700;
+        margin-top: 0.5rem;
         margin-bottom: 5px;
     }
 
@@ -129,7 +131,6 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-
 # =========================================================
 # SIDEBAR
 # =========================================================
@@ -137,7 +138,6 @@ st.markdown("""
 with st.sidebar:
 
     st.markdown("## 📧 SmartMail AI")
-
     st.caption("AI-powered email management")
 
     st.divider()
@@ -1050,3 +1050,263 @@ if st.session_state.chatbot_open:
             })
 
             st.rerun()    
+# ============================================
+# SMARTMAIL AI — FLOATING CHATBOT
+# ============================================
+
+import streamlit as st
+from chatbot.chat import ask_chatbot
+
+# Initialize chatbot state
+if "chatbot_open" not in st.session_state:
+    st.session_state.chatbot_open = False
+
+if "chat_messages" not in st.session_state:
+    st.session_state.chat_messages = []
+
+
+# Floating chatbot styling
+st.markdown("""
+<style>
+
+/* Floating launcher container */
+.st-key-smartmail_chat_launcher {
+    position: fixed !important;
+    right: 28px !important;
+    bottom: 28px !important;
+    width: 72px !important;
+    z-index: 999999 !important;
+}
+
+/* Large circular robot button */
+/* Floating SmartMail AI button */
+.st-key-smartmail_chat_launcher {
+    position: fixed !important;
+    right: 28px !important;
+    bottom: 28px !important;
+    width: 76px !important;
+    z-index: 999999 !important;
+}
+
+.st-key-smartmail_chat_launcher button {
+    width: 72px !important;
+    height: 72px !important;
+    min-height: 72px !important;
+    padding: 0 !important;
+
+    border-radius: 50% !important;
+    border: 2px solid #93c5fd !important;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    ) !important;
+
+    box-shadow:
+        0 0 15px rgba(59, 130, 246, 0.55),
+        0 5px 25px rgba(0, 0, 0, 0.4) !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    transition: all 0.25s ease !important;
+}
+
+/* Enlarge the actual icon inside the button */
+.st-key-smartmail_chat_launcher button p {
+    font-size: 36px !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+}
+
+.st-key-smartmail_chat_launcher button:hover {
+    transform: scale(1.08) !important;
+    border-color: #c4b5fd !important;
+    box-shadow: 0 0 24px rgba(124, 58, 237, 0.8) !important;
+}
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease !important;
+}
+
+/* Hover effect */
+.st-key-smartmail_chat_launcher button:hover {
+    transform: scale(1.08) !important;
+    box-shadow:
+        0 0 20px rgba(124, 58, 237, 0.75),
+        0 5px 24px rgba(0, 0, 0, 0.4) !important;
+    border-color: #c4b5fd !important;
+}
+
+/* Floating chat panel */
+.st-key-smartmail_chat_panel {
+    position: fixed !important;
+    right: 24px !important;
+    bottom: 108px !important;
+    width: 390px !important;
+    max-width: calc(100vw - 32px) !important;
+    max-height: 70vh !important;
+    overflow-y: auto !important;
+    z-index: 999998 !important;
+    background: #101522 !important;
+    border: 1px solid #35415b !important;
+    border-radius: 20px !important;
+    padding: 18px !important;
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.55) !important;
+}
+
+/* Chat panel headings */
+.st-key-smartmail_chat_panel h3 {
+    color: #ffffff !important;
+    font-size: 21px !important;
+}
+
+/* Chat panel buttons */
+.st-key-smartmail_chat_panel button {
+    border-radius: 10px !important;
+}
+
+/* Input field */
+.st-key-smartmail_chat_panel input {
+    border-radius: 12px !important;
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+    .st-key-smartmail_chat_panel {
+        right: 12px !important;
+        bottom: 94px !important;
+        width: calc(100vw - 24px) !important;
+        max-width: calc(100vw - 24px) !important;
+    }
+
+    .st-key-smartmail_chat_launcher {
+        right: 18px !important;
+        bottom: 18px !important;
+    }
+}
+
+</style>
+""", unsafe_allow_html=True)
+
+
+# ============================================
+# FLOATING CHAT PANEL
+# ============================================
+
+if st.session_state.chatbot_open:
+
+    with st.container(key="smartmail_chat_panel"):
+
+        header_col, close_col = st.columns([5, 1])
+
+        with header_col:
+            st.markdown("### 🤖 SmartMail AI")
+            st.caption("Your intelligent email assistant")
+
+        with close_col:
+            if st.button("✕", key="smartmail_close"):
+                st.session_state.chatbot_open = False
+                st.rerun()
+
+        st.divider()
+
+        # Suggested questions
+        if not st.session_state.chat_messages:
+
+            st.markdown("**Hi there! 👋**")
+            st.write("How can I help you with your emails?")
+
+            suggestions = [
+                "Show high-priority emails",
+                "Find emails about salary",
+                "Summarize recent emails",
+            ]
+
+            for index, suggestion in enumerate(suggestions):
+
+                if st.button(
+                    suggestion,
+                    key=f"smartmail_suggestion_{index}",
+                    use_container_width=True
+                ):
+                    st.session_state.pending_chat_question = suggestion
+                    st.rerun()
+
+        # Conversation history
+        for message in st.session_state.chat_messages:
+
+            with st.chat_message(message["role"]):
+                st.markdown(message["content"])
+
+        # Input form
+        with st.form(
+            "smartmail_chat_form",
+            clear_on_submit=True
+        ):
+
+            question = st.text_input(
+                "Ask SmartMail AI",
+                placeholder="Ask anything about your emails...",
+                label_visibility="collapsed"
+            )
+
+            submitted = st.form_submit_button(
+                "Send ➤",
+                use_container_width=True
+            )
+
+        # Handle submitted message
+        pending_question = st.session_state.pop(
+            "pending_chat_question",
+            ""
+        )
+
+        user_question = (
+            question.strip()
+            if submitted and question.strip()
+            else pending_question
+        )
+
+        if user_question:
+
+            st.session_state.chat_messages.append({
+                "role": "user",
+                "content": user_question
+            })
+
+            with st.spinner("Searching your emails..."):
+
+                try:
+                    answer = ask_chatbot(user_question)
+
+                except Exception:
+                    answer = (
+                        "Sorry, I couldn't process your request. "
+                        "Please try again."
+                    )
+
+            st.session_state.chat_messages.append({
+                "role": "assistant",
+                "content": answer
+            })
+
+            st.rerun()
+
+
+# ============================================
+# FLOATING ROBOT BUTTON
+# ============================================
+
+with st.container(key="smartmail_chat_launcher"):
+
+    if st.button(
+        "🤖",
+        key="smartmail_open_chat",
+        help="Chat with SmartMail AI"
+    ):
+        st.session_state.chatbot_open = (
+            not st.session_state.chatbot_open
+        )
+        st.rerun()
